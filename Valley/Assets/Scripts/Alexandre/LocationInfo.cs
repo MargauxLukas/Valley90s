@@ -5,4 +5,5 @@ using UnityEngine;
 public class LocationInfo : MonoBehaviour
 {
     public string name;
+    public bool discovered = false;
 }
