@@ -10,24 +10,26 @@ public class UIManager : MonoBehaviour
     //Location
     public GameObject locationGroup;
     private GameObject newLocationDiscovered;
-    private string locationName;
+    private Text locationName;
     private bool canCheckLocation = false;
 
     private void Awake()
     {
         instance = this;
         newLocationDiscovered = locationGroup.transform.GetChild(0).gameObject;
-        locationName = locationGroup.transform.GetChild(1).GetComponent<Text>().text;
-
+        locationName = locationGroup.transform.GetChild(1).GetComponent<Text>();
     }
 
     public void ShowLocation(string name)
     {
-
+        locationName.text = name;
+        locationGroup.SetActive(true);
+        StartCoroutine(HideLocation());
     }
 
-    public void HideLocation()
+    IEnumerator HideLocation()
     {
-
+        yield return new WaitForSeconds(1.5f);
+        locationGroup.SetActive(false);
     }
 }
