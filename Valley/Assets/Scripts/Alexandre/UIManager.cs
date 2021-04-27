@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
     private bool canCheckLocation = false;
 
     //Tree
-    public GameObject treeUI;
+    public GameObject treeUI, removeBaliseUI;
 
     private void Awake()
     {
@@ -50,6 +50,18 @@ public class UIManager : MonoBehaviour
     public void HideCutTreeUI()
     {
         treeUI.SetActive(false);
+    }
+    #endregion
+
+    #region Balise UI
+    public void ShowRemoveBaliseUI(Vector3 position)
+    {
+        removeBaliseUI.SetActive(true);
+    }
+
+    public void HideRemoveBaliseUI()
+    {
+        removeBaliseUI.SetActive(false);
     }
     #endregion
 }
