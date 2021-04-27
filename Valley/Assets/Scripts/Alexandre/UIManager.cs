@@ -16,6 +16,9 @@ public class UIManager : MonoBehaviour
     //Tree
     public GameObject treeUI, removeBaliseUI;
 
+    //Score
+    public Text score;
+
     private void Awake()
     {
         instance = this;
@@ -63,5 +66,13 @@ public class UIManager : MonoBehaviour
     {
         removeBaliseUI.SetActive(false);
     }
+    #endregion
+
+    #region Scoring
+    public void UpdateScore(int newScore)
+    {
+        score.text = newScore.ToString();
+    }
+
     #endregion
 }
