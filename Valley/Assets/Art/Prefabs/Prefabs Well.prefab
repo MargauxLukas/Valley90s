@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2057792267313160703}
   m_Layer: 0
-  m_Name: 'SM_Well_00 '
+  m_Name: Prefabs Well
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,7 +173,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cfc6244b01dafbc4ab686f016fc80d43, type: 2}
+  - {fileID: 2100000, guid: e1eb79b167deb2445ac72cbd09d0e970, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -254,7 +254,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cfc6244b01dafbc4ab686f016fc80d43, type: 2}
+  - {fileID: 2100000, guid: ad19c7eb5c4a73840ac21e32c4f6be37, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
