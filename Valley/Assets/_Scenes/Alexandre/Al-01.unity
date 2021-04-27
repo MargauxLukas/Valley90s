@@ -289,6 +289,7 @@ MonoBehaviour:
     m_Bits: 1024
   collisionObjectCheck: {fileID: 1828422755}
   interestPointDistance: 10
+  collisions: []
 --- !u!1 &302763120
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,6 +395,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 632306130}
+  - component: {fileID: 632306131}
   m_Layer: 0
   m_Name: UI Manager
   m_TagString: Untagged
@@ -415,6 +417,19 @@ Transform:
   m_Father: {fileID: 1763689935}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &632306131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632306129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 440ce741082251f4db07f37b93446716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locationGroup: {fileID: 988769776}
 --- !u!1 &696051341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1516,7 +1531,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Test
 --- !u!222 &1789497119
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1650,6 +1665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Ruines de Rubika
+  discovered: 0
 --- !u!1 &2019573248
 GameObject:
   m_ObjectHideFlags: 0
