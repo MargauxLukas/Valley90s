@@ -30,9 +30,5 @@ public class InterestLocationCheck : MonoBehaviour
                 UIManager.instance.ShowLocation(locationInfo.name);
             }
         }
-        else
-        {
-            
-        }
     }
 }

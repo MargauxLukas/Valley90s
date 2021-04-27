@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private float x = 0f;    //Cross Directionnal Up and Down
     private float z = 0f;    //Cross directionnal Left and Right
 
-    void Update()
+    void FixedUpdate()
     {
         /**************************
          *      Pad Controller    *
@@ -31,5 +31,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKey(KeyCode.S)){ characterController.Move(-transform.forward * speed); }
         if(Input.GetKey(KeyCode.Q)){ characterController.Move(-transform.right   * speed); }
         if(Input.GetKey(KeyCode.D)){ characterController.Move( transform.right   * speed); }
+
+        if(Input.GetKey(KeyCode.E)){ SandBoxManager.instance.CutTree();}
     }
 }
