@@ -27,6 +27,7 @@ public class InterestLocationCheck : MonoBehaviour
             if (!locationInfo.discovered)
             {
                 locationInfo.discovered = true;
+                VisitorSpawner.instance.SpawnNewVisitors();
                 UIManager.instance.ShowLocation(locationInfo.name);
             }
         }

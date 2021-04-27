@@ -36,7 +36,6 @@ public class Pathfinding : MonoBehaviour {
 			waypoints = RetracePath(startNode,targetNode, maxDistance);
 		}
 		requestManager.FinishedProcessingPath(waypoints,pathSuccess);
-		
 	}
 	
 	Vector3[] RetracePath(Node startNode, Node endNode, int maxDistance) 
@@ -45,7 +44,6 @@ public class Pathfinding : MonoBehaviour {
 		Vector3[] waypoints = GetVectorPath(path);
 		Array.Reverse(waypoints);
 		return waypoints;
-		
 	}
 	
 	Vector3[] GetVectorPath(List<Node> path) {
@@ -54,7 +52,6 @@ public class Pathfinding : MonoBehaviour {
 		for (int i = 0; i < path.Count; i ++) 
 		{
 			waypoints.Add(path[i].worldPosition);
-			//Debug.Log(waypoints[i]);
 		}
 		return waypoints.ToArray();
 	}

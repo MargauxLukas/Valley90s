@@ -8,6 +8,7 @@ public class VisitorBehavior : MonoBehaviour
     private Balise currentBalise, ancientBalise;
     [SerializeField]
     private Vector2 speedRange = new Vector2(2, 4);
+    [SerializeField]
     private float speed;
     [SerializeField]
     private float viewDistance;
@@ -95,7 +96,7 @@ public class VisitorBehavior : MonoBehaviour
 
         while (Vector3.Distance(finalPoint, transform.position) > 1)//3*speed*Time.deltaTime)
         {
-            if(Vector3.Distance(targetPoint, transform.position) <= 1)//2* speed * Time.deltaTime)
+            if (Vector3.Distance(targetPoint, transform.position) <= 1)//2* speed * Time.deltaTime)
             {
                 targetIndex++;
                 if (targetIndex >= path.Length)
