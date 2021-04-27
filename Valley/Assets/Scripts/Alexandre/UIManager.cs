@@ -16,6 +16,9 @@ public class UIManager : MonoBehaviour
     //Tree
     public GameObject treeUI;
 
+    //Score
+    public Text score;
+
     private void Awake()
     {
         instance = this;
@@ -51,5 +54,13 @@ public class UIManager : MonoBehaviour
     {
         treeUI.SetActive(false);
     }
+    #endregion
+
+    #region Scoring
+    public void UpdateScore(int newScore)
+    {
+        score.text = newScore.ToString();
+    }
+
     #endregion
 }
