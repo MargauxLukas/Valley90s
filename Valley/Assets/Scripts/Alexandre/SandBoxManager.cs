@@ -10,6 +10,8 @@ public class SandBoxManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> balisePrefabs;
 
+    private Transform visitorSpawner;
+
     private void Awake()
     {
         instance = this;
