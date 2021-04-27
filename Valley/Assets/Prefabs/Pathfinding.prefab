@@ -69,11 +69,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 855e868289c1843b09c78e143b2b1288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayGridGizmos: 1
+  displayGridGizmos: 0
   unwalkableMask:
     serializedVersion: 2
-    m_Bits: 32768
-  gridWorldSize: {x: 95, y: 70}
+    m_Bits: 65536
+  gridWorldSize: {x: 150, y: 150}
   nodeRadius: 0.5
   caseSprite: {fileID: 0}
   caseParent: {fileID: 0}
