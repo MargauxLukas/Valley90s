@@ -1,4 +1,4 @@
-﻿Shader "Custom/Path"
+﻿/*Shader "Custom/Path"
 {
     Properties
     {
@@ -63,4 +63,4 @@
             ENDCG
         }
     }
-}
+}*/
