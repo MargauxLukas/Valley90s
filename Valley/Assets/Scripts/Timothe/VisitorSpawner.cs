@@ -8,7 +8,19 @@ public class VisitorSpawner : MonoBehaviour
 
     public Transform visitorSpawner;
     [SerializeField]
+    private Transform visitorParent;
+    [SerializeField]
     private List<GameObject> visitorPrefabs;
+
+    [ContextMenu("Set visitor prefab")]
+    void SetVisitorsPrefabs()
+    {
+        visitorPrefabs = new List<GameObject>();
+        foreach (Transform tr in visitorParent)
+        {
+            visitorPrefabs.Add(tr.gameObject);
+        }
+    }
 
     private void Awake()
     {

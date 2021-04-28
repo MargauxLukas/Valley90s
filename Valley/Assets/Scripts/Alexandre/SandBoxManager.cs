@@ -8,9 +8,19 @@ public class SandBoxManager : MonoBehaviour
     public GameObject saveTree;
     public GameObject saveBalise;
     [SerializeField]
+    private Transform baliseParent;
+    [SerializeField]
     private List<GameObject> balisePrefabs;
 
-    private Transform visitorSpawner;
+    [ContextMenu("Set balise prefab")]
+    void SetBalisePrefabs()
+    {
+        balisePrefabs = new List<GameObject>();
+        foreach(Transform tr in baliseParent)
+        {
+            balisePrefabs.Add(tr.gameObject);
+        }
+    }
 
     private void Awake()
     {
