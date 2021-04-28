@@ -63,6 +63,8 @@ public class VisitorsFeedback : MonoBehaviour
         dialogueBulle.gameObject.SetActive(true);
         dialogueBulle.text = dialogue;
 
+        CabaneManager.instance.AddBalise(1);                            //Add 1 balise
+
         StartCoroutine(EndDialogue());
     }
 
