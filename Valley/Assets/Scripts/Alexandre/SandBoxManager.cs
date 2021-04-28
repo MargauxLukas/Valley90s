@@ -7,6 +7,7 @@ public class SandBoxManager : MonoBehaviour
     public static SandBoxManager instance;
     public GameObject saveTree;
     public GameObject saveBalise;
+    public GameObject saveTreasure;
     [SerializeField]
     private List<GameObject> balisePrefabs;
 
@@ -25,6 +26,17 @@ public class SandBoxManager : MonoBehaviour
     public void CutTree()
     {
         saveTree.SetActive(false);           //Oui c'est con pour le moment 
+    }
+
+    public void SaveTreasure(GameObject treasure)
+    {
+        saveTreasure = treasure;
+    }
+
+    public void OpenChest()
+    {
+        saveTreasure.SetActive(false);
+        UIManager.instance.ShowTreasureObtained(saveTreasure.GetComponent<TreasureInfo>().name);
     }
 
     public void SaveBalise(GameObject balise)
