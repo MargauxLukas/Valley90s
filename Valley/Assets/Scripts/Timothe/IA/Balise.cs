@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Balise : MonoBehaviour
 {
+    public GameObject mapPoint;
+
     private void OnDrawGizmos()
     {
         Color newCol = Color.yellow;

@@ -53,6 +53,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.E)) { SandBoxManager.instance.CutTree(); }
 
         if (Input.GetKeyDown(KeyCode.R)) { SandBoxManager.instance.PutBalise(transform.position + body.forward); }
+
+        if (Input.GetKeyDown(KeyCode.M)) { PinManager.instance.OpenMap(); }
     }
 
     private void MoveCharacter(Vector3 direction)

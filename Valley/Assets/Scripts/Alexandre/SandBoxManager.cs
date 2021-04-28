@@ -46,6 +46,7 @@ public class SandBoxManager : MonoBehaviour
                         g.SetActive(true);
                         g.transform.position = position;
                         CabaneManager.instance.UseBalise();
+                        g.GetComponent<Balise>().mapPoint = PinManager.instance.PutBalise(new Vector2(position.x, position.z));
                         break;
                     }
                 }
@@ -55,6 +56,7 @@ public class SandBoxManager : MonoBehaviour
         {
             CabaneManager.instance.AddBalise(1);
             saveBalise.SetActive(false);
+            PinManager.instance.RemoveBalise(saveBalise.GetComponent<Balise>().mapPoint);
             saveBalise = null;
         }
     }
