@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LocationInfo : Balise
+public class LocationInfo : MonoBehaviour
 {
     public string name;
     public bool discovered = false;                 //Pour le joueur

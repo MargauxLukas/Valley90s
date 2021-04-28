@@ -13,6 +13,9 @@ public class VisitorBehavior : MonoBehaviour
     [SerializeField]
     private float viewDistance;
 
+    [SerializeField]
+    private LayerMask baliseLayer;
+
     private void Start()
     {
         speed = Random.Range(speedRange.x, speedRange.y);
@@ -37,7 +40,7 @@ public class VisitorBehavior : MonoBehaviour
     {
         List<Balise> baliseInSight = new List<Balise>();
 
-        Collider[] allOverlappingColliders = Physics.OverlapSphere(transform.position, viewDistance);
+        Collider[] allOverlappingColliders = Physics.OverlapSphere(transform.position, viewDistance, baliseLayer);
         foreach(Collider col in allOverlappingColliders)
         {
             if(col.GetComponent<Balise>()!=null && ancientBalise != col.GetComponent<Balise>() && currentBalise != col.GetComponent<Balise>())

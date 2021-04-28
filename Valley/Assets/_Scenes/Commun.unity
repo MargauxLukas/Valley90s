@@ -2162,6 +2162,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Landmark-Castle
       objectReference: {fileID: 0}
+    - target: {fileID: 2993499737406149235, guid: cf352ab8822db0141a6111f53bd44c18, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993499737691379213, guid: cf352ab8822db0141a6111f53bd44c18, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993499737691379250, guid: cf352ab8822db0141a6111f53bd44c18, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf352ab8822db0141a6111f53bd44c18, type: 3}
 --- !u!4 &593923649 stripped
@@ -4775,7 +4787,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1138178067063559692, guid: 4d973a8b2b608764ab152f175026d8aa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 11.2
       objectReference: {fileID: 0}
     - target: {fileID: 1138178067063559692, guid: 4d973a8b2b608764ab152f175026d8aa, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4783,7 +4795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1138178067063559692, guid: 4d973a8b2b608764ab152f175026d8aa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.4
+      value: 9.2
       objectReference: {fileID: 0}
     - target: {fileID: 1138178067063559692, guid: 4d973a8b2b608764ab152f175026d8aa, type: 3}
       propertyPath: m_LocalRotation.x

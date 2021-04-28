@@ -242,3 +242,6 @@ MonoBehaviour:
   speedRange: {x: 5, y: 8}
   speed: 0
   viewDistance: 13
+  baliseLayer:
+    serializedVersion: 2
+    m_Bits: 32768
