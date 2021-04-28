@@ -36,18 +36,24 @@ public class SandBoxManager : MonoBehaviour
     {
         if (saveBalise == null)
         {
-            foreach (GameObject g in balisePrefabs)
+            Debug.Log(CabaneManager.instance.CanPutBalise());
+            if (CabaneManager.instance.CanPutBalise())
             {
-                if (!g.activeSelf)
+                foreach (GameObject g in balisePrefabs)
                 {
-                    g.SetActive(true);
-                    g.transform.position = position;
-                    break;
+                    if (!g.activeSelf)
+                    {
+                        g.SetActive(true);
+                        g.transform.position = position;
+                        CabaneManager.instance.UseBalise();
+                        break;
+                    }
                 }
             }
         }
         else
         {
+            CabaneManager.instance.AddBalise(1);
             saveBalise.SetActive(false);
             saveBalise = null;
         }
