@@ -239,7 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 31413701}
   speed: 0.1
-  body: {fileID: 0}
+  body: {fileID: 1828422755}
 --- !u!143 &31413701
 CharacterController:
   m_ObjectHideFlags: 0

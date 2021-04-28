@@ -37,6 +37,11 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKey(KeyCode.Q)) { moveDirection += (-Vector3.right   * speed); }
         if(Input.GetKey(KeyCode.D)) { moveDirection += ( Vector3.right   * speed); }
 
+        if(Input.GetAxisRaw("D-Pad (Horizontal)") != 0){ moveDirection += ( Vector3.right   * Input.GetAxisRaw("D-Pad (Horizontal)") * speed); }
+        if(Input.GetAxisRaw("D-Pad (Vertical)") != 0)  { moveDirection += (-Vector3.forward * Input.GetAxisRaw("D-Pad (Vertical)") * speed); }
+
+        Debug.Log(Input.GetAxis("D-Pad (Horizontal)"));
+
         if (moveDirection != Vector3.zero)
         {
             MoveCharacter(moveDirection);
