@@ -41,9 +41,13 @@ public class PlayerController : MonoBehaviour
         {
             MoveCharacter(moveDirection);
         }
+    }
 
-        if(Input.GetKey(KeyCode.E)){ SandBoxManager.instance.CutTree();}
-        if(Input.GetKeyDown(KeyCode.R)){ SandBoxManager.instance.PutBalise(transform.position + body.forward); }
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.E)) { SandBoxManager.instance.CutTree(); }
+
+        if (Input.GetKeyDown(KeyCode.R)) { SandBoxManager.instance.PutBalise(transform.position + body.forward); }
     }
 
     private void MoveCharacter(Vector3 direction)

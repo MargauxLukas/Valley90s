@@ -14,6 +14,7 @@ public class VisitorsFeedback : MonoBehaviour
 
     public TextMesh dialogueBulle;
     private string dialogue;
+    private int chanceDialogue;                                       //Random
 
     void Start()
     {
@@ -27,11 +28,24 @@ public class VisitorsFeedback : MonoBehaviour
         ResetMemory();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.gameObject.name.Contains("Player") && nbLandmarksVisited > 0)
+        {
+            chanceDialogue = UnityEngine.Random.Range(1,11);
+            Debug.Log(chanceDialogue);
+            if (chanceDialogue > 5)
+            {
+                Dialogue();
+            }
+        }
+    }
+
     public void LandmarksPoint(LocationInfo landmark)
     {
         lastLandmarkVisited = landmark;
         nbLandmarksVisited++;
-        Dialogue();
     }
 
     public void ResetMemory()
@@ -48,6 +62,8 @@ public class VisitorsFeedback : MonoBehaviour
 
         dialogueBulle.gameObject.SetActive(true);
         dialogueBulle.text = dialogue;
+
+        CabaneManager.instance.AddBalise(1);                            //Add 1 balise
 
         StartCoroutine(EndDialogue());
     }
