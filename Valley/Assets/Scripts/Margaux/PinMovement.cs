@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class PinMovement : MonoBehaviour
 {
-    public float speed = 8f;
+    public Transform player;
     void Update()
     {
-        var mvt = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f) * speed * Time.deltaTime;
-        transform.position += mvt;
+        transform.position = new Vector2(player.position.x, player.position.z)*0.1f + new Vector2(100,0);
     }
 }

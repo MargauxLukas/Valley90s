@@ -15,12 +15,12 @@ public class PinManager : MonoBehaviour
     private void Awake()
     {
         Init();
+        gameObject.SetActive(false);
     }
 
     public virtual void Init()
     {
         instance = this;
-
     }
 
     void Update()
@@ -32,5 +32,21 @@ public class PinManager : MonoBehaviour
 
             Instantiate(prefab, flattenMouse, Quaternion.identity, dynamics);
         }
+    }
+
+    public void OpenMap()
+    {
+        gameObject.SetActive(!gameObject.activeSelf);
+    }
+
+    public GameObject PutBalise(Vector2 position)
+    {
+        position = new Vector2(100, 0) + position*0.1f;
+        return Instantiate(prefab, position, Quaternion.identity, dynamics);
+    }
+
+    public void RemoveBalise(GameObject toRemove)
+    {
+        toRemove.SetActive(false);
     }
 }
