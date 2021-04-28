@@ -9,6 +9,10 @@ public class CabaneManager : MonoBehaviour
     [SerializeField]
     private int baliseInStock = 5;
 
+    [SerializeField]
+    public GameObject floatingText;
+
+
     private void Awake()
     {
         instance = this;
@@ -18,6 +22,7 @@ public class CabaneManager : MonoBehaviour
     {
         Debug.Log("Balise en plus");
         baliseInStock++;
+        floatingText.SetActive(true);
     }
 
     public bool CanPutBalise()
