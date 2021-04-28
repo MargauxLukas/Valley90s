@@ -48,7 +48,11 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetButton("A Button")) { SandBoxManager.instance.CutTree(); }
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetButton("A Button")) 
+        {
+            if (UIManager.instance.treeUI.activeSelf) { SandBoxManager.instance.CutTree(); }
+            if (UIManager.instance.treasureUI.activeSelf) { SandBoxManager.instance.OpenChest(); }
+        }
 
         if (Input.GetKeyDown(KeyCode.R)) { SandBoxManager.instance.PutBalise(transform.position + body.forward); }
 
