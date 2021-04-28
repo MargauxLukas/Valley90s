@@ -15,7 +15,7 @@ public class InterestLocationCheck : MonoBehaviour
 
     private void FixedUpdate()
     {
-        isNearInterestPoint = Physics.CheckSphere(collisionObjectCheck.position, interestPointDistance, interestPointMask);
+        /*isNearInterestPoint = Physics.CheckSphere(collisionObjectCheck.position, interestPointDistance, interestPointMask);
         collisions = Physics.OverlapSphere(collisionObjectCheck.position, interestPointDistance, interestPointMask);
 
         
@@ -23,16 +23,26 @@ public class InterestLocationCheck : MonoBehaviour
         {
             locationInfo = collisions[0].gameObject.GetComponent<LocationInfo>();
 
-            
             if (!locationInfo.discovered)
             {
                 locationInfo.discovered = true;
                 UIManager.instance.ShowLocation(locationInfo.name);
             }
-        }
-        else
+        }*/
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.name.Contains("Landmark"))
         {
-            
+            locationInfo = other.gameObject.GetComponent<LocationInfo>();
+
+            if (!locationInfo.discovered)
+            {
+                locationInfo.discovered = true;
+                VisitorSpawner.instance.SpawnNewVisitors();
+                UIManager.instance.ShowLocation(locationInfo.name);
+            }
         }
     }
 }

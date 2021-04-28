@@ -13,6 +13,12 @@ public class UIManager : MonoBehaviour
     private Text locationName;
     private bool canCheckLocation = false;
 
+    //Tree
+    public GameObject treeUI, removeBaliseUI;
+
+    //Score
+    public Text score;
+
     private void Awake()
     {
         instance = this;
@@ -20,6 +26,8 @@ public class UIManager : MonoBehaviour
         locationName = locationGroup.transform.GetChild(1).GetComponent<Text>();
     }
 
+
+    #region Location Point UI
     public void ShowLocation(string name)
     {
         locationName.text = name;
@@ -32,4 +40,39 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         locationGroup.SetActive(false);
     }
+    #endregion
+
+    #region Tree UI
+    public void ShowCutTreeUI(Vector3 position)
+    {
+        //Tree location (Nan c'est nul)
+        
+        treeUI.SetActive(true);
+    }
+
+    public void HideCutTreeUI()
+    {
+        treeUI.SetActive(false);
+    }
+    #endregion
+
+    #region Balise UI
+    public void ShowRemoveBaliseUI(Vector3 position)
+    {
+        removeBaliseUI.SetActive(true);
+    }
+
+    public void HideRemoveBaliseUI()
+    {
+        removeBaliseUI.SetActive(false);
+    }
+    #endregion
+
+    #region Scoring
+    public void UpdateScore(int newScore)
+    {
+        score.text = newScore.ToString();
+    }
+
+    #endregion
 }

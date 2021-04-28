@@ -8,6 +8,7 @@ public class VisitorBehavior : MonoBehaviour
     private Balise currentBalise, ancientBalise;
     [SerializeField]
     private Vector2 speedRange = new Vector2(2, 4);
+    [SerializeField]
     private float speed;
     [SerializeField]
     private float viewDistance;
@@ -18,30 +19,23 @@ public class VisitorBehavior : MonoBehaviour
         SearchForBalise();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //Balise en vue : Déplacement
-        //Pas de balise en vue : Rieng pendant X secondes + déplacements aléatoire
-    }
-
     private void AskToMove(Vector3 newDirection)
     {
-        StopAllCoroutines();
-        StartCoroutine(MoveCharacter(newDirection));
+        PathRequestManager.RequestPath(transform.position, newDirection, 99, OnPathFound);
     }
 
-    /*private void EndMovement()
+    public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
     {
-        StartCoroutine("WaitNextMovement");
-    }*/
+        if (pathSuccessful)
+        {
+            StopAllCoroutines();
+            StartCoroutine(MoveCharacter(newPath));
+        }
+    }
 
     private void SearchForBalise()
     {
         List<Balise> baliseInSight = new List<Balise>();
-
-        if(ancientBalise!=null)
-            Debug.Log(ancientBalise.gameObject);
 
         Collider[] allOverlappingColliders = Physics.OverlapSphere(transform.position, viewDistance);
         foreach(Collider col in allOverlappingColliders)
@@ -65,7 +59,14 @@ public class VisitorBehavior : MonoBehaviour
             ancientBalise = tmp;
         }
 
-        AskToMove(currentBalise.transform.position);
+        if (currentBalise != null)
+        {
+            AskToMove(currentBalise.transform.position);
+        }
+        else
+        {
+            StartCoroutine(WaitForEploration());
+        }
     }
 
     IEnumerator WaitNextToBalise()
@@ -74,17 +75,36 @@ public class VisitorBehavior : MonoBehaviour
         SearchForBalise();
     }
 
-    IEnumerator MoveCharacter(Vector3 targetPoint)
+    IEnumerator MoveCharacter(Vector3[] path)
     {
         float movedDistance = 0;
-        targetPoint += new Vector3(Random.Range(-0.2f, 0.2f), 0, Random.Range(-0.2f, 0.2f));
+        int targetIndex = 0;
+
+        if(path.Length<=0)
+        {
+            StartCoroutine(WaitNextToBalise());
+            yield break;
+        }
+
+        Vector3 targetPoint = path[0];
         Vector2 direction = GetDirectionFor3DObjects(transform.position, targetPoint);
 
         float titubage = 0;
         Vector3 titubageDirection = Vector3.zero;
 
-        while (Vector3.Distance(targetPoint, transform.position) > 1)//3*speed*Time.deltaTime)
+        Vector3 finalPoint = path[path.Length - 1] + new Vector3(Random.Range(-0.2f, 0.2f), 0, Random.Range(-0.2f, 0.2f));
+
+        while (Vector3.Distance(finalPoint, transform.position) > 1)//3*speed*Time.deltaTime)
         {
+            if (Vector3.Distance(targetPoint, transform.position) <= 1)//2* speed * Time.deltaTime)
+            {
+                targetIndex++;
+                if (targetIndex >= path.Length)
+                {
+                    break;
+                }
+                targetPoint = path[targetIndex];
+            }
             transform.position += (new Vector3(direction.x, 0, direction.y) + titubageDirection).normalized * speed * Time.deltaTime;
             movedDistance += speed * Time.deltaTime;
             titubage += speed * Time.deltaTime;
@@ -100,24 +120,26 @@ public class VisitorBehavior : MonoBehaviour
         StartCoroutine(WaitNextToBalise());
     }
 
-    /*IEnumerator WaitNextMovement()
+    IEnumerator WaitForEploration()
     {
-        yield return new WaitForSeconds(2f);
-        if (currentBalise != null)
+        Vector3 destination = GetRandomPositionWithDistance(5);
+        while(!Grid.instance.NodeFromWorldPoint(destination).walkable)
         {
-            AskToMove(GetDirectionFor3DObjects(transform.position, currentBalise.transform.position));
+            yield return new WaitForSeconds(0.2f);
+            destination = GetRandomPositionWithDistance(5);
         }
-    }*/
 
-    /*private void OnTriggerEnter(Collider other)
+        AskToMove(destination);
+    }
+
+    private Vector3 GetRandomPositionWithDistance(float maxDistance)
     {
-        Debug.Log("Allo ?");
-        if(other.GetComponent<Balise>() != null)
-        {
-            currentBalise = other.GetComponent<Balise>();
-            AskToMove(GetDirectionFor3DObjects(transform.position, other.transform.position));
-        }
-    }*/
+        Vector4 bound = Grid.instance.WorldBounds;
+        Vector3 destination = transform.position + new Vector3(Random.Range(-maxDistance, maxDistance), 0, Random.Range(-maxDistance, maxDistance));
+        destination = new Vector3(Mathf.Clamp(destination.x, bound.x, bound.y), 0, Mathf.Clamp(destination.z, bound.z, bound.w));
+
+        return destination;
+    }
 
     private Vector2 GetDirectionFor3DObjects(Vector3 objStart, Vector3 objEnd)
     {
