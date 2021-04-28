@@ -40,8 +40,6 @@ public class PlayerController : MonoBehaviour
         if(Input.GetAxisRaw("D-Pad (Horizontal)") != 0){ moveDirection += ( Vector3.right   * Input.GetAxisRaw("D-Pad (Horizontal)") * speed); }
         if(Input.GetAxisRaw("D-Pad (Vertical)") != 0)  { moveDirection += (-Vector3.forward * Input.GetAxisRaw("D-Pad (Vertical)") * speed); }
 
-        Debug.Log(Input.GetAxis("D-Pad (Horizontal)"));
-
         if (moveDirection != Vector3.zero)
         {
             MoveCharacter(moveDirection);
@@ -50,9 +48,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.E)) { SandBoxManager.instance.CutTree(); }
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetButton("A Button")) { SandBoxManager.instance.CutTree(); }
 
-        if (Input.GetKeyDown(KeyCode.R)) { SandBoxManager.instance.PutBalise(transform.position + body.forward); }
+        if (Input.GetKeyDown(KeyCode.R) || Input.GetButton("X Button")) { SandBoxManager.instance.PutBalise(transform.position + body.forward); }
     }
 
     private void MoveCharacter(Vector3 direction)

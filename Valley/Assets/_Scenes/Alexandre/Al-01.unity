@@ -656,7 +656,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '[E] Cut Tree'
+  m_Text: '[A] Cut Tree'
 --- !u!222 &1130924975
 CanvasRenderer:
   m_ObjectHideFlags: 0
