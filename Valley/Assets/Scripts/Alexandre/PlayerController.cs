@@ -37,6 +37,9 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKey(KeyCode.Q)) { moveDirection += (-Vector3.right   * speed); }
         if(Input.GetKey(KeyCode.D)) { moveDirection += ( Vector3.right   * speed); }
 
+        if(Input.GetAxisRaw("D-Pad (Horizontal)") != 0){ moveDirection += ( Vector3.right   * Input.GetAxisRaw("D-Pad (Horizontal)") * speed); }
+        if(Input.GetAxisRaw("D-Pad (Vertical)") != 0)  { moveDirection += (-Vector3.forward * Input.GetAxisRaw("D-Pad (Vertical)") * speed); }
+
         if (moveDirection != Vector3.zero)
         {
             MoveCharacter(moveDirection);
@@ -45,9 +48,15 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.E)) { SandBoxManager.instance.CutTree(); }
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetButton("A Button")) 
+        {
+            if (UIManager.instance.treeUI.activeSelf) { SandBoxManager.instance.CutTree(); }
+            if (UIManager.instance.treasureUI.activeSelf) { SandBoxManager.instance.OpenChest(); }
+        }
 
         if (Input.GetKeyDown(KeyCode.R)) { SandBoxManager.instance.PutBalise(transform.position + body.forward); }
+
+        if (Input.GetKeyDown(KeyCode.M)) { PinManager.instance.OpenMap(); }
     }
 
     private void MoveCharacter(Vector3 direction)

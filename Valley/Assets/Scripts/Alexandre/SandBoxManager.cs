@@ -7,10 +7,21 @@ public class SandBoxManager : MonoBehaviour
     public static SandBoxManager instance;
     public GameObject saveTree;
     public GameObject saveBalise;
+    public GameObject saveTreasure;
+    [SerializeField]
+    private Transform baliseParent;
     [SerializeField]
     private List<GameObject> balisePrefabs;
 
-    private Transform visitorSpawner;
+    [ContextMenu("Set balise prefab")]
+    void SetBalisePrefabs()
+    {
+        balisePrefabs = new List<GameObject>();
+        foreach(Transform tr in baliseParent)
+        {
+            balisePrefabs.Add(tr.gameObject);
+        }
+    }
 
     private void Awake()
     {
@@ -25,6 +36,17 @@ public class SandBoxManager : MonoBehaviour
     public void CutTree()
     {
         saveTree.SetActive(false);           //Oui c'est con pour le moment 
+    }
+
+    public void SaveTreasure(GameObject treasure)
+    {
+        saveTreasure = treasure;
+    }
+
+    public void OpenChest()
+    {
+        saveTreasure.SetActive(false);
+        UIManager.instance.ShowTreasureObtained(saveTreasure.GetComponent<TreasureInfo>().name);
     }
 
     public void SaveBalise(GameObject balise)
@@ -46,6 +68,7 @@ public class SandBoxManager : MonoBehaviour
                         g.SetActive(true);
                         g.transform.position = position;
                         CabaneManager.instance.UseBalise();
+                        g.GetComponent<Balise>().mapPoint = PinManager.instance.PutBalise(new Vector2(position.x, position.z));
                         break;
                     }
                 }
@@ -55,6 +78,7 @@ public class SandBoxManager : MonoBehaviour
         {
             CabaneManager.instance.AddBalise(1);
             saveBalise.SetActive(false);
+            PinManager.instance.RemoveBalise(saveBalise.GetComponent<Balise>().mapPoint);
             saveBalise = null;
         }
     }
