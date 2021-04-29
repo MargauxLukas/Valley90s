@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1824580842505042049}
   - component: {fileID: 4519012384327470155}
   m_Layer: 0
-  m_Name: SM_TreeStump
+  m_Name: Prefabs TreeStump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2717427191859228062}
   m_LocalRotation: {x: 0.000000015454312, y: -0.7071068, z: 0.000000015454312, w: 0.7071068}
-  m_LocalPosition: {x: -0.3373418, y: -0.00000042033633, z: -5.042695}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
