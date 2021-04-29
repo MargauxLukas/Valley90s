@@ -43,10 +43,18 @@ public class SandBoxManager : MonoBehaviour
         saveTreasure = treasure;
     }
 
-    public void OpenChest()
+    public void OpenChest(out bool canCutTree)
     {
         saveTreasure.SetActive(false);
         UIManager.instance.ShowTreasureObtained(saveTreasure.GetComponent<TreasureInfo>().name);
+        if(saveTreasure.GetComponent<TreasureInfo>().unlockAxe)
+        {
+            canCutTree = true;
+        }
+        else
+        {
+            canCutTree = false;
+        }
     }
 
     public void SaveBalise(GameObject balise)
@@ -76,7 +84,7 @@ public class SandBoxManager : MonoBehaviour
         }
         else
         {
-            CabaneManager.instance.AddBalise(1);
+            CabaneManager.instance.AddArgent(-3);
             saveBalise.SetActive(false);
             PinManager.instance.RemoveBalise(saveBalise.GetComponent<Balise>().mapPoint);
             saveBalise = null;

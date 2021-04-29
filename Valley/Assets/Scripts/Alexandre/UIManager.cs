@@ -74,7 +74,7 @@ public class UIManager : MonoBehaviour
         treasureName.text = name;
         treasureGroup.SetActive(true);
         treasureUI.SetActive(false);
-        CabaneManager.instance.AddBalise(3);
+        CabaneManager.instance.AddArgent(3);
         StartCoroutine(HideTreasure());
     }
 

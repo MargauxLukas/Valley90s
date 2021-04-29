@@ -5,6 +5,9 @@ using UnityEngine;
 public class VisitorBehavior : MonoBehaviour
 {
     [SerializeField]
+    private Balise locationObjectif;
+
+    [SerializeField]
     private Balise currentBalise, ancientBalise;
     [SerializeField]
     private Vector2 speedRange = new Vector2(2, 4);
@@ -22,6 +25,17 @@ public class VisitorBehavior : MonoBehaviour
     {
         speed = Random.Range(speedRange.x, speedRange.y);
         SearchForBalise();
+    }*/
+
+    private void OnEnable()
+    {
+        speed = Random.Range(speedRange.x, speedRange.y);
+        SearchForBalise();
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
     }
 
     private void AskToMove(Vector3 newDirection)
@@ -56,7 +70,42 @@ public class VisitorBehavior : MonoBehaviour
         {
             ancientBalise = currentBalise;
 
-            currentBalise = baliseInSight[Random.Range(0, baliseInSight.Count)];
+            List<float> baliseDistances = new List<float>();
+            float maxChance = 0;
+
+            if (locationObjectif != null)
+            {
+                foreach (Balise b in baliseInSight)
+                {
+                    baliseDistances.Add(1 / Vector3.Distance(b.transform.position, locationObjectif.transform.position));
+                    maxChance += 1 / Vector3.Distance(b.transform.position, locationObjectif.transform.position);
+                }
+            }
+            else
+            {
+                foreach (Balise b in baliseInSight)
+                {
+                    baliseDistances.Add(1);
+                    maxChance += 1;
+                }
+            }
+
+            float targetChance = Random.Range(0, maxChance);
+            //Debug.Log(maxChance);
+            //Debug.Log(baliseInSight.Count);
+            for (int i = 0; i < baliseDistances.Count; i++)
+            {
+               // Debug.Log(targetChance + " <= " + baliseDistances[i]);
+                if (targetChance <= baliseDistances[i])
+                {
+                    currentBalise = baliseInSight[i];
+                    break;
+                }
+            }
+
+            //Debug.Log(currentBalise);
+
+            //currentBalise = baliseInSight[Random.Range(0, baliseInSight.Count)];
         }
         else
         {
@@ -67,12 +116,29 @@ public class VisitorBehavior : MonoBehaviour
 
         if (currentBalise != null)
         {
+            if(currentBalise == locationObjectif)
+            {
+                if (locationObjectif != CabaneManager.instance.GetCabaneBalise)
+                {
+                    ChangeObjectif(CabaneManager.instance.GetCabaneBalise);
+                }
+                else
+                {
+                    gameObject.SetActive(false);
+                }
+            }
+
             AskToMove(currentBalise.transform.position);
         }
         else
         {
             StartCoroutine(WaitForEploration());
         }
+    }
+
+    public void ChangeObjectif(Balise newObjectif)
+    {
+        locationObjectif = newObjectif;
     }
 
     IEnumerator WaitNextToBalise()

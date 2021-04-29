@@ -9,6 +9,8 @@ public class LocationInfo : MonoBehaviour
 
     public string dialoguePhrase;
 
+    public Balise locationBalise;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.GetComponent<VisitorsFeedback>())

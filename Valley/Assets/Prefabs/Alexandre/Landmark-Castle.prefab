@@ -127,6 +127,7 @@ MonoBehaviour:
   name: Chateau de Godefroy de Montmirail
   discovered: 0
   dialoguePhrase: Pas avec votre Poncho
+  locationBalise: {fileID: 2879800608506725478}
 --- !u!1 &2993499737695184441
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,3 +475,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5314240533742856616, guid: d3ecca6d457dad745a6fe893182db46d, type: 3}
   m_PrefabInstance: {fileID: 7946851102732250575}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2879800608506725478 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5314240533742856617, guid: d3ecca6d457dad745a6fe893182db46d, type: 3}
+  m_PrefabInstance: {fileID: 7946851102732250575}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81699d7bf3152b64eb69c0445086e821, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

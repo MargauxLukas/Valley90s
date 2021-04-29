@@ -6,6 +6,8 @@ public class TreasureInfo : MonoBehaviour
 {
     public string name;
 
+    public bool unlockAxe;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<PlayerController>())
