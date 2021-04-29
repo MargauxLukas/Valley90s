@@ -16,6 +16,8 @@ public class VisitorBehavior : MonoBehaviour
     [SerializeField]
     private LayerMask baliseLayer;
 
+    public Animator animator;
+
     private void Start()
     {
         speed = Random.Range(speedRange.x, speedRange.y);
@@ -31,6 +33,7 @@ public class VisitorBehavior : MonoBehaviour
     {
         if (pathSuccessful)
         {
+            animator.SetBool("isWalking", true);
             StopAllCoroutines();
             StartCoroutine(MoveCharacter(newPath));
         }
@@ -74,6 +77,7 @@ public class VisitorBehavior : MonoBehaviour
 
     IEnumerator WaitNextToBalise()
     {
+        animator.SetBool("isWalking", false);
         yield return new WaitForSeconds(Random.Range(.5f, 2f));
         SearchForBalise();
     }
@@ -125,6 +129,7 @@ public class VisitorBehavior : MonoBehaviour
 
     IEnumerator WaitForEploration()
     {
+        animator.SetBool("isWalking", false);
         Vector3 destination = GetRandomPositionWithDistance(5);
         while(!Grid.instance.NodeFromWorldPoint(destination).walkable)
         {
