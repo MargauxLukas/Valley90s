@@ -27,9 +27,14 @@ public class VisitorSpawner : MonoBehaviour
         instance = this;
     }
 
-    public void SpawnNewVisitors()
+    private void Start()
     {
-        for(int i = 0; i < 5; i++)
+        SpawnNewVisitors(3);
+    }
+
+    public void SpawnNewVisitors(int numberToSpawn)
+    {
+        for(int i = 0; i < numberToSpawn; i++)
         {
             //visitorPrefabs[0].transform.position = visitorSpawner.position;
             visitorPrefabs[0].SetActive(true);

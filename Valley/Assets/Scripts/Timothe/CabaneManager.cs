@@ -12,6 +12,10 @@ public class CabaneManager : MonoBehaviour
     [SerializeField]
     public GameObject floatingText;
 
+    [SerializeField]
+    private Balise cabaneBalise;
+
+    public Balise GetCabaneBalise { get { return cabaneBalise; } }
 
     private void Awake()
     {
