@@ -40,7 +40,8 @@ public class InterestLocationCheck : MonoBehaviour
             if (!locationInfo.discovered)
             {
                 locationInfo.discovered = true;
-                VisitorSpawner.instance.SpawnNewVisitors(5);
+                VisitorSpawner.instance.AddNewLocation(locationInfo.locationBalise);
+                VisitorSpawner.instance.SpawnNewVisitors(1);
                 UIManager.instance.ShowLocation(locationInfo.name);
             }
         }

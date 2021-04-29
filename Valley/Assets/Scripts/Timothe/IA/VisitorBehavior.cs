@@ -70,10 +70,21 @@ public class VisitorBehavior : MonoBehaviour
             List<float> baliseDistances = new List<float>();
             float maxChance = 0;
 
-            foreach (Balise b in baliseInSight)
+            if (locationObjectif != null)
             {
-                baliseDistances.Add(1/Vector3.Distance(b.transform.position, transform.position));
-                maxChance += 1 / Vector3.Distance(b.transform.position, transform.position);
+                foreach (Balise b in baliseInSight)
+                {
+                    baliseDistances.Add(1 / Vector3.Distance(b.transform.position, locationObjectif.transform.position));
+                    maxChance += 1 / Vector3.Distance(b.transform.position, locationObjectif.transform.position);
+                }
+            }
+            else
+            {
+                foreach (Balise b in baliseInSight)
+                {
+                    baliseDistances.Add(1);
+                    maxChance += 1;
+                }
             }
 
             float targetChance = Random.Range(0, maxChance);
