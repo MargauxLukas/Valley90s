@@ -155,6 +155,7 @@ MonoBehaviour:
   name: Ruines de Rubika
   discovered: 0
   dialoguePhrase: "Ca avait l'air d'\xEAtre une bonne \xE9cole"
+  locationBalise: {fileID: 8478089143270141427}
 --- !u!1 &7400042243676673431
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,6 +189,7 @@ Transform:
   - {fileID: 7400042244973631728}
   - {fileID: 7400042243324193767}
   - {fileID: 7400042244868853469}
+  - {fileID: 8478089143270141426}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -411,3 +413,76 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &4330141446839452762
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7400042243676673428}
+    m_Modifications:
+    - target: {fileID: 5314240533742856616, guid: d3ecca6d457dad745a6fe893182db46d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314240533742856616, guid: d3ecca6d457dad745a6fe893182db46d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314240533742856616, guid: d3ecca6d457dad745a6fe893182db46d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314240533742856616, guid: d3ecca6d457dad745a6fe893182db46d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314240533742856616, guid: d3ecca6d457dad745a6fe893182db46d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314240533742856616, guid: d3ecca6d457dad745a6fe893182db46d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314240533742856616, guid: d3ecca6d457dad745a6fe893182db46d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314240533742856616, guid: d3ecca6d457dad745a6fe893182db46d, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314240533742856616, guid: d3ecca6d457dad745a6fe893182db46d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314240533742856616, guid: d3ecca6d457dad745a6fe893182db46d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314240533742856616, guid: d3ecca6d457dad745a6fe893182db46d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314240533742856619, guid: d3ecca6d457dad745a6fe893182db46d, type: 3}
+      propertyPath: m_Name
+      value: Balise
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d3ecca6d457dad745a6fe893182db46d, type: 3}
+--- !u!4 &8478089143270141426 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5314240533742856616, guid: d3ecca6d457dad745a6fe893182db46d, type: 3}
+  m_PrefabInstance: {fileID: 4330141446839452762}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8478089143270141427 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5314240533742856617, guid: d3ecca6d457dad745a6fe893182db46d, type: 3}
+  m_PrefabInstance: {fileID: 4330141446839452762}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81699d7bf3152b64eb69c0445086e821, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

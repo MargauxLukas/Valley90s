@@ -12,6 +12,8 @@ public class VisitorSpawner : MonoBehaviour
     [SerializeField]
     private List<GameObject> visitorPrefabs;
 
+    private List<Balise> knownLocations = new List<Balise>();
+
     [ContextMenu("Set visitor prefab")]
     void SetVisitorsPrefabs()
     {
@@ -27,13 +29,36 @@ public class VisitorSpawner : MonoBehaviour
         instance = this;
     }
 
-    public void SpawnNewVisitors()
+    private void Start()
     {
-        for(int i = 0; i < 5; i++)
+        SpawnNewVisitors(1);
+    }
+
+    public void SpawnNewVisitors(int numberToSpawn)
+    {
+        for(int i = 0; i < numberToSpawn; i++)
         {
             //visitorPrefabs[0].transform.position = visitorSpawner.position;
+            visitorPrefabs[0].GetComponent<VisitorBehavior>().ChangeObjectif(GetObjective());
             visitorPrefabs[0].SetActive(true);
             visitorPrefabs.RemoveAt(0);
         }
+    }
+
+    public void AddNewLocation(Balise newLocation)
+    {
+        if (!knownLocations.Contains(newLocation))
+        {
+            knownLocations.Add(newLocation);
+        }
+    }
+
+    private Balise GetObjective()
+    {
+        if (knownLocations.Count > 0)
+        {
+            return knownLocations[Random.Range(0, knownLocations.Count)];
+        }
+        return null;
     }
 }
