@@ -328,6 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baliseInStock: 5
+  floatingText: {fileID: 0}
 --- !u!1 &31413695
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,6 +678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81699d7bf3152b64eb69c0445086e821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapPoint: {fileID: 0}
 --- !u!65 &55033483
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -820,6 +822,9 @@ MonoBehaviour:
   speedRange: {x: 5, y: 8}
   speed: 0
   viewDistance: 13
+  baliseLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!23 &118541469
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1046,6 +1051,9 @@ MonoBehaviour:
   speedRange: {x: 5, y: 8}
   speed: 0
   viewDistance: 13
+  baliseLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!23 &143558506
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1236,6 +1244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81699d7bf3152b64eb69c0445086e821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapPoint: {fileID: 0}
 --- !u!65 &187789002
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1570,6 +1579,9 @@ MonoBehaviour:
   speedRange: {x: 5, y: 8}
   speed: 0
   viewDistance: 13
+  baliseLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!23 &262662474
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2126,6 +2138,9 @@ MonoBehaviour:
   speedRange: {x: 5, y: 8}
   speed: 0
   viewDistance: 13
+  baliseLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!23 &349907422
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2398,6 +2413,9 @@ MonoBehaviour:
   speedRange: {x: 5, y: 8}
   speed: 0
   viewDistance: 13
+  baliseLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!23 &543674554
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2528,6 +2546,9 @@ MonoBehaviour:
   speedRange: {x: 5, y: 8}
   speed: 0
   viewDistance: 13
+  baliseLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!23 &551783333
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2658,6 +2679,9 @@ MonoBehaviour:
   speedRange: {x: 5, y: 8}
   speed: 0
   viewDistance: 13
+  baliseLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!23 &577763042
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2839,8 +2863,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   locationGroup: {fileID: 988769776}
+  treasureGroup: {fileID: 0}
   treeUI: {fileID: 1130924972}
   removeBaliseUI: {fileID: 2096852866}
+  treasureUI: {fileID: 0}
   score: {fileID: 0}
 --- !u!1 &635904925
 GameObject:
@@ -3776,6 +3802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81699d7bf3152b64eb69c0445086e821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapPoint: {fileID: 0}
 --- !u!65 &950517915
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4272,6 +4299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81699d7bf3152b64eb69c0445086e821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapPoint: {fileID: 0}
 --- !u!65 &1075581840
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4605,6 +4633,9 @@ MonoBehaviour:
   speedRange: {x: 5, y: 8}
   speed: 0
   viewDistance: 13
+  baliseLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!23 &1121044563
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4874,6 +4905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81699d7bf3152b64eb69c0445086e821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapPoint: {fileID: 0}
 --- !u!65 &1210687911
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5701,6 +5733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81699d7bf3152b64eb69c0445086e821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapPoint: {fileID: 0}
 --- !u!65 &1323310576
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5807,6 +5840,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1364056261
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 9031809713633431025, guid: f59bda6cd4f704e48a49a52dc87d4412, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031809713633431025, guid: f59bda6cd4f704e48a49a52dc87d4412, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031809713633431025, guid: f59bda6cd4f704e48a49a52dc87d4412, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031809713633431025, guid: f59bda6cd4f704e48a49a52dc87d4412, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031809713633431025, guid: f59bda6cd4f704e48a49a52dc87d4412, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031809713633431025, guid: f59bda6cd4f704e48a49a52dc87d4412, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031809713633431025, guid: f59bda6cd4f704e48a49a52dc87d4412, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031809713633431025, guid: f59bda6cd4f704e48a49a52dc87d4412, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031809713633431025, guid: f59bda6cd4f704e48a49a52dc87d4412, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031809713633431025, guid: f59bda6cd4f704e48a49a52dc87d4412, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031809713633431025, guid: f59bda6cd4f704e48a49a52dc87d4412, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031809713633431027, guid: f59bda6cd4f704e48a49a52dc87d4412, type: 3}
+      propertyPath: m_Name
+      value: Map
+      objectReference: {fileID: 0}
+    - target: {fileID: 9031809713633431027, guid: f59bda6cd4f704e48a49a52dc87d4412, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f59bda6cd4f704e48a49a52dc87d4412, type: 3}
 --- !u!1 &1366417811
 GameObject:
   m_ObjectHideFlags: 0
@@ -5965,6 +6059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81699d7bf3152b64eb69c0445086e821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapPoint: {fileID: 0}
 --- !u!65 &1422019958
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6073,6 +6168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81699d7bf3152b64eb69c0445086e821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapPoint: {fileID: 0}
 --- !u!65 &1423109574
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7090,6 +7186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visitorSpawner: {fileID: 1458792787}
+  visitorParent: {fileID: 0}
   visitorPrefabs:
   - {fileID: 349907417}
   - {fileID: 1865745793}
@@ -7502,6 +7599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81699d7bf3152b64eb69c0445086e821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapPoint: {fileID: 0}
 --- !u!65 &1828681420
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7741,6 +7839,9 @@ MonoBehaviour:
   speedRange: {x: 5, y: 8}
   speed: 0
   viewDistance: 13
+  baliseLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!23 &1865745798
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7836,6 +7937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81699d7bf3152b64eb69c0445086e821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapPoint: {fileID: 0}
 --- !u!65 &1897468358
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8169,6 +8271,9 @@ MonoBehaviour:
   speedRange: {x: 5, y: 8}
   speed: 0
   viewDistance: 13
+  baliseLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!23 &1927438503
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8264,6 +8369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81699d7bf3152b64eb69c0445086e821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapPoint: {fileID: 0}
 --- !u!65 &1929539502
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8502,6 +8608,9 @@ MonoBehaviour:
   speedRange: {x: 5, y: 8}
   speed: 0
   viewDistance: 13
+  baliseLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!23 &1979417605
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8887,6 +8996,9 @@ MonoBehaviour:
   speedRange: {x: 5, y: 8}
   speed: 0
   viewDistance: 13
+  baliseLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!23 &2074046878
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8982,6 +9094,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81699d7bf3152b64eb69c0445086e821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapPoint: {fileID: 0}
 --- !u!65 &2083464886
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9263,6 +9376,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   saveTree: {fileID: 0}
   saveBalise: {fileID: 0}
+  saveTreasure: {fileID: 0}
+  baliseParent: {fileID: 0}
   balisePrefabs:
   - {fileID: 1323310573}
   - {fileID: 2111171460}
@@ -9320,6 +9435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81699d7bf3152b64eb69c0445086e821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapPoint: {fileID: 0}
 --- !u!65 &2111171463
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9428,6 +9544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81699d7bf3152b64eb69c0445086e821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mapPoint: {fileID: 0}
 --- !u!65 &2120072583
 BoxCollider:
   m_ObjectHideFlags: 0
