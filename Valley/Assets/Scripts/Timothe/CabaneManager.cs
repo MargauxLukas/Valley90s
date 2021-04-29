@@ -20,7 +20,6 @@ public class CabaneManager : MonoBehaviour
 
     public void AddBalise(int nbToAdd)
     {
-        Debug.Log("Balise en plus");
         baliseInStock++;
         floatingText.SetActive(true);
     }
@@ -32,7 +31,6 @@ public class CabaneManager : MonoBehaviour
 
     public void UseBalise()
     {
-        Debug.Log("Balise en moins");
         baliseInStock--;
     }
 }

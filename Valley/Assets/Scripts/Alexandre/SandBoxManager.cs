@@ -58,7 +58,6 @@ public class SandBoxManager : MonoBehaviour
     {
         if (saveBalise == null)
         {
-            Debug.Log(CabaneManager.instance.CanPutBalise());
             if (CabaneManager.instance.CanPutBalise())
             {
                 foreach (GameObject g in balisePrefabs)
