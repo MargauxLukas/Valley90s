@@ -11,7 +11,8 @@ public class TreeCheck : MonoBehaviour
     public float treeDistance = 0.5f;
 
     public Collider[] collisions;
-    private bool canCut;
+    //private bool canCut;
+    GameObject currentTargetedTree;
 
     private void FixedUpdate()
     {
@@ -20,17 +21,34 @@ public class TreeCheck : MonoBehaviour
 
         if (isNearTree)
         {
-            if (!canCut)
+            if(currentTargetedTree != GetClosestTree())
             {
-                SandBoxManager.instance.SaveTree(collisions[0].gameObject);
-                UIManager.instance.ShowCutTreeUI(collisions[0].transform.position);
-                canCut = true;
+                currentTargetedTree = GetClosestTree();
+                SandBoxManager.instance.SaveTree(currentTargetedTree);
+                UIManager.instance.ShowCutTreeUI(currentTargetedTree.transform.position);
             }
         }
         else
         {
             UIManager.instance.HideCutTreeUI();
-            canCut = false;
+            currentTargetedTree = null;
         }
+    }
+
+    private GameObject GetClosestTree()
+    {
+        float distance = -1;
+        GameObject treeToReturn = null;
+
+        foreach(Collider col in collisions)
+        {
+            if(distance < 0 || distance > Vector3.Distance(col.transform.position, transform.position))
+            {
+                treeToReturn = col.gameObject;
+                distance = Vector3.Distance(col.transform.position, transform.position);
+            }
+        }
+
+        return treeToReturn;
     }
 }
