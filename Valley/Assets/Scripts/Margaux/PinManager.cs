@@ -10,12 +10,15 @@ public class PinManager : MonoBehaviour
     [SerializeField] public float viewRange;
     [SerializeField] public float blockingRange;
 
+    [SerializeField] public Camera cam;
+    [SerializeField] public Camera mapCam;
+
     public static PinManager instance;
 
     private void Awake()
     {
         Init();
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
     public virtual void Init()
@@ -36,7 +39,8 @@ public class PinManager : MonoBehaviour
 
     public void OpenMap()
     {
-        gameObject.SetActive(!gameObject.activeSelf);
+        cam.gameObject.SetActive(!cam.gameObject.activeSelf);
+        mapCam.gameObject.SetActive(!mapCam.gameObject.activeSelf);
     }
 
     public GameObject PutBalise(Vector2 position)

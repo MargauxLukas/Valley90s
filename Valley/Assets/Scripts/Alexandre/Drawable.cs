@@ -127,7 +127,7 @@ namespace FreeDraw
             // PenBrush is the NAME of the method we want to set as our current brush
             current_brush = PenBrush;
         }
-//////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -139,40 +139,29 @@ namespace FreeDraw
         void Update()
         {
             // Is the user holding down the left mouse button?
-            bool mouse_held_down = Input.GetMouseButton(0);
-            if (mouse_held_down && !no_drawing_on_current_drag)
+            //389,227
+            // Convert mouse coordinates to world coordinates
+            Vector2 mouse_world_position = wantedCam.ScreenToWorldPoint(new Vector2(PlayerManager.instance.playerBody.transform.position.x + 120f, PlayerManager.instance.playerBody.transform.position.z+60f) * 1f + new Vector2(170, 150));
+            // Check if the current mouse position overlaps our image
+            Collider2D hit = Physics2D.OverlapPoint(mouse_world_position, Drawing_Layers.value);
+            if (hit != null && hit.transform != null)
             {
-                // Convert mouse coordinates to world coordinates
-                Vector2 mouse_world_position = wantedCam.ScreenToWorldPoint(Input.mousePosition);
-
-                // Check if the current mouse position overlaps our image
-                Collider2D hit = Physics2D.OverlapPoint(mouse_world_position, Drawing_Layers.value);
-                if (hit != null && hit.transform != null)
-                {
-                    // We're over the texture we're drawing on!
-                    // Use whatever function the current brush is
-                    current_brush(mouse_world_position);
-                }
-
-                else
-                {
-                    // We're not over our destination texture
-                    previous_drag_position = Vector2.zero;
-                    if (!mouse_was_previously_held_down)
-                    {
-                        // This is a new drag where the user is left clicking off the canvas
-                        // Ensure no drawing happens until a new drag is started
-                        no_drawing_on_current_drag = true;
-                    }
-                }
+                // We're over the texture we're drawing on!
+                // Use whatever function the current brush is
+                current_brush(mouse_world_position);
             }
-            // Mouse is released
-            else if (!mouse_held_down)
+
+            else
             {
+                // We're not over our destination texture
                 previous_drag_position = Vector2.zero;
-                no_drawing_on_current_drag = false;
+                if (!mouse_was_previously_held_down)
+                {
+                    // This is a new drag where the user is left clicking off the canvas
+                    // Ensure no drawing happens until a new drag is started
+                    no_drawing_on_current_drag = true;
+                }
             }
-            mouse_was_previously_held_down = mouse_held_down;
         }
 
 
