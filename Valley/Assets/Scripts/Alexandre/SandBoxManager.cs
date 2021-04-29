@@ -84,7 +84,7 @@ public class SandBoxManager : MonoBehaviour
         }
         else
         {
-            CabaneManager.instance.AddBalise(1);
+            CabaneManager.instance.AddArgent(-3);
             saveBalise.SetActive(false);
             PinManager.instance.RemoveBalise(saveBalise.GetComponent<Balise>().mapPoint);
             saveBalise = null;

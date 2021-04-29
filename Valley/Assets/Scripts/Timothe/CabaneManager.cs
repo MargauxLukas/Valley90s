@@ -7,7 +7,7 @@ public class CabaneManager : MonoBehaviour
     public static CabaneManager instance;
 
     [SerializeField]
-    private int baliseInStock = 5;
+    private int argent = 5;
 
     [SerializeField]
     public GameObject floatingText;
@@ -17,26 +17,38 @@ public class CabaneManager : MonoBehaviour
 
     public Balise GetCabaneBalise { get { return cabaneBalise; } }
 
+    float timeLeftBeforeMonney;
+
     private void Awake()
     {
         instance = this;
     }
 
-    public void AddBalise(int nbToAdd)
+    private void Update()
+    {
+        timeLeftBeforeMonney += Time.deltaTime;
+        if(timeLeftBeforeMonney > 30)
+        {
+            timeLeftBeforeMonney = 0;
+            AddArgent(VisitorSpawner.instance.GetVisitorInValley * 1);
+        }
+    }
+
+    public void AddArgent(int nbToAdd)
     {
         Debug.Log("Balise en plus");
-        baliseInStock++;
+        argent++;
         floatingText.SetActive(true);
     }
 
     public bool CanPutBalise()
     {
-        return baliseInStock > 0;
+        return argent > 5;
     }
 
     public void UseBalise()
     {
         Debug.Log("Balise en moins");
-        baliseInStock--;
+        argent -= 5;
     }
 }

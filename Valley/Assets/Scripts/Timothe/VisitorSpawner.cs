@@ -14,6 +14,12 @@ public class VisitorSpawner : MonoBehaviour
 
     private List<Balise> knownLocations = new List<Balise>();
 
+    private int visitorInValley;
+
+    public int GetVisitorInValley { get { return visitorInValley; } }
+
+    float timeBeforeSpawn;
+
     [ContextMenu("Set visitor prefab")]
     void SetVisitorsPrefabs()
     {
@@ -31,7 +37,17 @@ public class VisitorSpawner : MonoBehaviour
 
     private void Start()
     {
-        SpawnNewVisitors(1);
+        //SpawnNewVisitors(1);
+    }
+
+    private void Update()
+    {
+        timeBeforeSpawn += Time.deltaTime;
+        if(timeBeforeSpawn>60 && visitorInValley < knownLocations.Count*2)
+        {
+            timeBeforeSpawn = 0;
+            SpawnNewVisitors(1);
+        }
     }
 
     public void SpawnNewVisitors(int numberToSpawn)
@@ -42,7 +58,14 @@ public class VisitorSpawner : MonoBehaviour
             visitorPrefabs[0].GetComponent<VisitorBehavior>().ChangeObjectif(GetObjective());
             visitorPrefabs[0].SetActive(true);
             visitorPrefabs.RemoveAt(0);
+            visitorInValley++;
         }
+    }
+
+    public void HideNewVisitor(GameObject toHide)
+    {
+        toHide.SetActive(false);
+        visitorInValley--;
     }
 
     public void AddNewLocation(Balise newLocation)
