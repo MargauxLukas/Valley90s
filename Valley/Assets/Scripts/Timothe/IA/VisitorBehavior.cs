@@ -97,9 +97,9 @@ public class VisitorBehavior : MonoBehaviour
 
         Vector3 finalPoint = path[path.Length - 1] + new Vector3(Random.Range(-0.2f, 0.2f), 0, Random.Range(-0.2f, 0.2f));
 
-        while (Vector3.Distance(finalPoint, transform.position) > 1)//3*speed*Time.deltaTime)
+        while (Vector3.Distance(finalPoint, transform.position) > 1.5f)//3*speed*Time.deltaTime)
         {
-            if (Vector3.Distance(targetPoint, transform.position) <= 1)//2* speed * Time.deltaTime)
+            if (Vector3.Distance(targetPoint, transform.position) <= 1f)//2* speed * Time.deltaTime)
             {
                 targetIndex++;
                 if (targetIndex >= path.Length)
