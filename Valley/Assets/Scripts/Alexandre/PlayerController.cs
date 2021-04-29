@@ -42,8 +42,10 @@ public class PlayerController : MonoBehaviour
 
         if (moveDirection != Vector3.zero)
         {
+            PlayerManager.instance.PlayWalk();
             MoveCharacter(moveDirection);
         }
+        else { PlayerManager.instance.StopWalk(); }
     }
 
     private void Update()
