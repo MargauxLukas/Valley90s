@@ -77,11 +77,11 @@ public class VisitorBehavior : MonoBehaviour
             }
 
             float targetChance = Random.Range(0, maxChance);
-            Debug.Log(maxChance);
-            Debug.Log(baliseInSight.Count);
+            //Debug.Log(maxChance);
+            //Debug.Log(baliseInSight.Count);
             for (int i = 0; i < baliseDistances.Count; i++)
             {
-                Debug.Log(targetChance + " <= " + baliseDistances[i]);
+               // Debug.Log(targetChance + " <= " + baliseDistances[i]);
                 if (targetChance <= baliseDistances[i])
                 {
                     currentBalise = baliseInSight[i];
@@ -89,7 +89,7 @@ public class VisitorBehavior : MonoBehaviour
                 }
             }
 
-            Debug.Log(currentBalise);
+            //Debug.Log(currentBalise);
 
             //currentBalise = baliseInSight[Random.Range(0, baliseInSight.Count)];
         }

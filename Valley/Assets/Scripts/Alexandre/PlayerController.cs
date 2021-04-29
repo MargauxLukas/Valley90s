@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     private float x = 0f;    //Cross Directionnal Up and Down
     private float z = 0f;    //Cross directionnal Left and Right
 
+    private bool canCutTree;
+
     void FixedUpdate()
     {
         /**************************
@@ -50,8 +52,8 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) || Input.GetButton("A Button")) 
         {
-            if (UIManager.instance.treeUI.activeSelf) { SandBoxManager.instance.CutTree(); }
-            if (UIManager.instance.treasureUI.activeSelf) { SandBoxManager.instance.OpenChest(); }
+            if (UIManager.instance.treeUI.activeSelf && canCutTree) { SandBoxManager.instance.CutTree(); }
+            if (UIManager.instance.treasureUI.activeSelf) { SandBoxManager.instance.OpenChest(out canCutTree); }
         }
 
         if (Input.GetKeyDown(KeyCode.R)) { SandBoxManager.instance.PutBalise(transform.position + body.forward); }
