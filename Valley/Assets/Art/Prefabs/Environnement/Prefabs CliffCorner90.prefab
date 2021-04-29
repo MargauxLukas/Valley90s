@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &830162422362339472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 317873787314793537}
+  m_Layer: 0
+  m_Name: Prefabs CliffCorner90
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &317873787314793537
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830162422362339472}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.9106407, y: -23.123688, z: 8.821204}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4708146281235632190}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &5105968603486566357
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 317873787314793537}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 11bce56279ead6b42b073a6d5e70548c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.271641
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11bce56279ead6b42b073a6d5e70548c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 23.122799
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11bce56279ead6b42b073a6d5e70548c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.150195
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11bce56279ead6b42b073a6d5e70548c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11bce56279ead6b42b073a6d5e70548c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11bce56279ead6b42b073a6d5e70548c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11bce56279ead6b42b073a6d5e70548c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11bce56279ead6b42b073a6d5e70548c, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11bce56279ead6b42b073a6d5e70548c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11bce56279ead6b42b073a6d5e70548c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 11bce56279ead6b42b073a6d5e70548c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 11bce56279ead6b42b073a6d5e70548c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 011739c1daff7074fa57edd36107fb51, type: 2}
+    - target: {fileID: 919132149155446097, guid: 11bce56279ead6b42b073a6d5e70548c, type: 3}
+      propertyPath: m_Name
+      value: SM_Cliff_Corner90
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 11bce56279ead6b42b073a6d5e70548c, type: 3}
+--- !u!4 &4708146281235632190 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 11bce56279ead6b42b073a6d5e70548c, type: 3}
+  m_PrefabInstance: {fileID: 5105968603486566357}
+  m_PrefabAsset: {fileID: 0}
