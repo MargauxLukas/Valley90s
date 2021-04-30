@@ -231,7 +231,7 @@ public class VisitorBehavior : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        //UnityEditor.Handles.color = Color.blue;
-        //UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.up, viewDistance);
+        UnityEditor.Handles.color = Color.blue;
+        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.up, viewDistance);
     }
 }
