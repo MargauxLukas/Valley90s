@@ -827,7 +827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastLandmarkVisited: {fileID: 0}
   nbLandmarksVisited: 0
-  dialogueBulle: {fileID: 3140250668578785605}
+  dialogueBulle: {fileID: 0}
   possibleRandomDialogue:
   - "J'esp\xE9rais faire ce voyage depuis longtemps !"
   - Tout est si paisible ici.
@@ -1741,15 +1741,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue Bulle
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3867902040317794891, guid: 73c8bc99f5b63b846bea4f400a5afdd7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 73c8bc99f5b63b846bea4f400a5afdd7, type: 3}
 --- !u!4 &3140250668578785606 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3867902040317794888, guid: 73c8bc99f5b63b846bea4f400a5afdd7, type: 3}
-  m_PrefabInstance: {fileID: 2178023896739271438}
-  m_PrefabAsset: {fileID: 0}
---- !u!102 &3140250668578785605 stripped
-TextMesh:
-  m_CorrespondingSourceObject: {fileID: 3867902040317794891, guid: 73c8bc99f5b63b846bea4f400a5afdd7, type: 3}
   m_PrefabInstance: {fileID: 2178023896739271438}
   m_PrefabAsset: {fileID: 0}

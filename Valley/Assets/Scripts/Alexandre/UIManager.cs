@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,14 +12,14 @@ public class UIManager : MonoBehaviour
     //Location
     public GameObject locationGroup;
     private GameObject newLocationDiscovered;
-    private Text locationName;
+    private TMP_Text locationName;
     private bool canCheckLocation = false;
 
     [Header("Treasure")]
     //Treasure
     public GameObject treasureGroup;
     private GameObject newTreasureObtained;
-    private Text treasureName;
+    private TMP_Text treasureName;
 
     //Tree
     public GameObject treeUI, removeBaliseUI, treasureUI;
@@ -35,11 +36,11 @@ public class UIManager : MonoBehaviour
 
         //Location
         newLocationDiscovered = locationGroup.transform.GetChild(0).gameObject;
-        locationName = locationGroup.transform.GetChild(1).GetComponent<Text>();
+        locationName = locationGroup.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
 
         //Treasure
         newTreasureObtained = treasureGroup.transform.GetChild(0).gameObject;
-        treasureName = treasureGroup.transform.GetChild(1).GetComponent<Text>();
+        treasureName = treasureGroup.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
     }
 
 
