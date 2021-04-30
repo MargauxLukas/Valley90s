@@ -141,7 +141,7 @@ namespace FreeDraw
             // Is the user holding down the left mouse button?
             //389,227
             // Convert mouse coordinates to world coordinates
-            Vector2 mouse_world_position = wantedCam.ScreenToWorldPoint(new Vector2(PlayerManager.instance.playerBody.transform.position.x + 120f, PlayerManager.instance.playerBody.transform.position.z+60f) * 1f + new Vector2(170, 150));
+            Vector2 mouse_world_position = wantedCam.ScreenToWorldPoint(new Vector2(PlayerManager.instance.playerBody.transform.position.x + 20f, PlayerManager.instance.playerBody.transform.position.z-40f) * 1f + new Vector2(170, 150));
             // Check if the current mouse position overlaps our image
             Collider2D hit = Physics2D.OverlapPoint(mouse_world_position, Drawing_Layers.value);
             if (hit != null && hit.transform != null)
