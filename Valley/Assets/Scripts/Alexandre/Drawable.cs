@@ -12,6 +12,11 @@ namespace FreeDraw
     // 4. Hold down left mouse to draw on this texture!
     public class Drawable : MonoBehaviour
     {
+
+        private int startWidth, startHeight, baseWidth = 512, baseHeight = 768, maxWorldWidth = 200, maxWorldHeigh = 150;
+        private float coef, worldCoef;
+
+
         // PEN COLOUR
         public static Color Pen_Colour = Color.red;     // Change these to change the default drawing settings
         // PEN WIDTH (actually, it's a radius, in pixels)
@@ -45,9 +50,15 @@ namespace FreeDraw
 
         public Camera wantedCam;
 
-//////////////////////////////////////////////////////////////////////////////
-// BRUSH TYPES. Implement your own here
+        //////////////////////////////////////////////////////////////////////////////
+        // BRUSH TYPES. Implement your own here
 
+        private void Start()
+        {
+            startWidth = Screen.width;
+            startHeight = Screen.height;
+            coef = 512 / (maxWorldWidth*2);
+        }
 
         // When you want to make your own type of brush effects,
         // Copy, paste and rename this function.
@@ -251,7 +262,11 @@ namespace FreeDraw
         public Vector2 WorldToPixelCoordinates(Vector2 world_position)
         {
             // Change coordinates to local coordinates of this image
-            Vector3 local_pos = transform.InverseTransformPoint(world_position);
+            Vector3 local_pos = transform.InverseTransformPoint(world_position);// + new Vector2(-50,-50));
+
+            local_pos = new Vector3(local_pos.x * coef + 0.23f, local_pos.y * coef + 0.12f, local_pos.z);
+
+            Debug.Log(local_pos);
 
             // Change these to coordinates of pixels
             float pixelWidth = drawable_sprite.rect.width;
@@ -264,6 +279,8 @@ namespace FreeDraw
 
             // Round current mouse position to nearest pixel
             Vector2 pixel_pos = new Vector2(Mathf.RoundToInt(centered_x), Mathf.RoundToInt(centered_y));
+
+            Debug.Log(pixel_pos);
 
             return pixel_pos;
         }
