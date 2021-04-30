@@ -50,19 +50,19 @@ public class SandBoxManager : MonoBehaviour
         saveTreasure = treasure;
     }
 
-    public void OpenChest(out bool canCutTree)
+    public bool OpenChest(bool canCutTree)
     {
         saveTreasure.SetActive(false);
         UIManager.instance.ShowTreasureObtained(saveTreasure.GetComponent<TreasureInfo>().name);
         CabaneManager.instance.AddArgent(saveTreasure.GetComponent<TreasureInfo>().money);
-        if(saveTreasure.GetComponent<TreasureInfo>().unlockAxe)
+        if(saveTreasure.GetComponent<TreasureInfo>().unlockAxe || canCutTree)
         {
             UIAxe.SetActive(true);
-            canCutTree = true;
+            return true;
         }
         else
         {
-            canCutTree = false;
+            return false;
         }
     }
 

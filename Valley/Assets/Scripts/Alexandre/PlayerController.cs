@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private float x = 0f;    //Cross Directionnal Up and Down
     private float z = 0f;    //Cross directionnal Left and Right
 
+    [SerializeField]
     private bool canCutTree;
 
     [SerializeField]
@@ -62,7 +63,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log(canCutTree);
             if (UIManager.instance.treeUI.activeSelf && canCutTree) { SandBoxManager.instance.CutTree(); }
-            if (UIManager.instance.treasureUI.activeSelf) { SandBoxManager.instance.OpenChest(out canCutTree); }
+            if (UIManager.instance.treasureUI.activeSelf) { canCutTree = SandBoxManager.instance.OpenChest(canCutTree); }
         }
 
         if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetButtonDown("X Button")) {SandBoxManager.instance.PutBalise(transform.position); }
