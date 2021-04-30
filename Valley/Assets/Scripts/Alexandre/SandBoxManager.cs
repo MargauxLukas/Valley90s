@@ -69,6 +69,7 @@ public class SandBoxManager : MonoBehaviour
 
     public void PutBalise(Vector3 position)
     {
+        position = new Vector3(position.x, 0, position.z);
         if (saveBalise == null)
         {
             if (CabaneManager.instance.CanPutBalise())

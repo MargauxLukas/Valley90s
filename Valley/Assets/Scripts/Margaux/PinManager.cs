@@ -51,6 +51,6 @@ public class PinManager : MonoBehaviour
 
     public void RemoveBalise(GameObject toRemove)
     {
-        toRemove.SetActive(false);
+        //toRemove.SetActive(false);
     }
 }
