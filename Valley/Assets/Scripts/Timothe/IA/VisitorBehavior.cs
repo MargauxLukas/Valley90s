@@ -168,6 +168,8 @@ public class VisitorBehavior : MonoBehaviour
         Vector3 targetPoint = path[0];
         Vector2 direction = GetDirectionFor3DObjects(transform.position, targetPoint);
 
+        gameObject.transform.GetChild(0).forward = new Vector3(direction.x,0,direction.y);
+
         float titubage = 0;
         Vector3 titubageDirection = Vector3.zero;
 
