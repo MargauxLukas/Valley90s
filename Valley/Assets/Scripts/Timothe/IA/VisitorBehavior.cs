@@ -86,6 +86,7 @@ public class VisitorBehavior : MonoBehaviour
             {
                 foreach (Balise b in baliseInSight)
                 {
+                    Debug.Log(b.gameObject);
                     baliseDistances.Add(1);
                     maxChance += 1;
                 }
@@ -173,9 +174,9 @@ public class VisitorBehavior : MonoBehaviour
 
         Vector3 finalPoint = path[path.Length - 1] + new Vector3(Random.Range(-0.2f, 0.2f), 0, Random.Range(-0.2f, 0.2f));
 
-        while (Vector3.Distance(finalPoint, transform.position) > 1)//3*speed*Time.deltaTime)
+        while (GetDistanceBetweenPoints(finalPoint, transform.position) >0.5f)
         {
-            if (Vector3.Distance(targetPoint, transform.position) <= 1)//2* speed * Time.deltaTime)
+            if (GetDistanceBetweenPoints(targetPoint, transform.position) <= 0.5f)
             {
                 targetIndex++;
                 if (targetIndex >= path.Length)
@@ -227,6 +228,11 @@ public class VisitorBehavior : MonoBehaviour
         Vector3 direction3D = objEnd - objStart;
 
         return new Vector2(direction3D.x, direction3D.z).normalized;
+    }
+
+    private float GetDistanceBetweenPoints(Vector3 p1, Vector3 p2)
+    {
+        return Vector2.Distance(new Vector2(p1.x, p1.z), new Vector2(p2.x, p2.z));
     }
 
     private void OnDrawGizmos()
