@@ -84,7 +84,7 @@ public class SandBoxManager : MonoBehaviour
                     {
                         g.SetActive(true);
                         g.transform.position = position;
-                        CabaneManager.instance.UseBalise();
+                        CabaneManager.instance.AddArgent(-5);
                         g.GetComponent<Balise>().mapPoint = PinManager.instance.PutBalise(new Vector2(position.x, position.z));
                         g.GetComponent<Balise>().audioSource.Play();
                         break;

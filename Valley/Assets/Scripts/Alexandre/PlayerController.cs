@@ -60,11 +60,12 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetButtonDown("A Button")) 
         {
+            Debug.Log(canCutTree);
             if (UIManager.instance.treeUI.activeSelf && canCutTree) { SandBoxManager.instance.CutTree(); }
             if (UIManager.instance.treasureUI.activeSelf) { SandBoxManager.instance.OpenChest(out canCutTree); }
         }
 
-        if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetButtonDown("X Button")) {SandBoxManager.instance.PutBalise(transform.position + body.forward); }
+        if (Input.GetKeyDown(KeyCode.Keypad2) || Input.GetButtonDown("X Button")) {SandBoxManager.instance.PutBalise(transform.position); }
 
         if (Input.GetKeyDown(KeyCode.Keypad3) ||Input.GetButtonDown("Y Button")) { PinManager.instance.OpenMap(); }
     }
@@ -73,7 +74,8 @@ public class PlayerController : MonoBehaviour
     {
         if(timeBeforeStepSound < 0)
         {
-            timeBeforeStepSound = 5 / speed;
+            timeBeforeStepSound = 5*speed;
+            Debug.Log(timeBeforeStepSound);
             audioSource.Play();
         }
         characterController.Move(direction);

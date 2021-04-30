@@ -8916,6 +8916,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1690901430424921506, guid: b5ca3ed353e16f042804647f1fafe0f2, type: 3}
+      propertyPath: unlockAxe
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1690901430424921508, guid: b5ca3ed353e16f042804647f1fafe0f2, type: 3}
       propertyPath: m_Name
       value: Treasure
@@ -12155,6 +12159,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1789497116}
   m_CullTransparentMesh: 0
+--- !u!1 &1817130139 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8130757962223026337, guid: f7c62be7781e0ff4a9a0adbc4991e584, type: 3}
+  m_PrefabInstance: {fileID: 815497567}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1819939754
 GameObject:
   m_ObjectHideFlags: 0
@@ -14849,6 +14858,10 @@ PrefabInstance:
       propertyPath: balisePrefabs.Array.data[91]
       value: 
       objectReference: {fileID: 859366672}
+    - target: {fileID: 404485819111789989, guid: 23128ec5b2bbf9c4eac5a2ace42860dc, type: 3}
+      propertyPath: UIAxe
+      value: 
+      objectReference: {fileID: 1817130139}
     - target: {fileID: 404485819784023383, guid: 23128ec5b2bbf9c4eac5a2ace42860dc, type: 3}
       propertyPath: locationGroup
       value: 
@@ -14965,6 +14978,10 @@ PrefabInstance:
       propertyPath: visitorPrefabs.Array.data[19]
       value: 
       objectReference: {fileID: 533449207}
+    - target: {fileID: 6868027988583311592, guid: 23128ec5b2bbf9c4eac5a2ace42860dc, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: aca0e727f93b87a44a8034886f83d22b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23128ec5b2bbf9c4eac5a2ace42860dc, type: 3}
 --- !u!1001 &4594030986294484965
@@ -15022,10 +15039,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3260345882920558232, guid: b4982b0d5e94551418c5a82ff37181c5, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7bf8afe629b80254ea035de7ce277596, type: 3}
     - target: {fileID: 3260345882920558233, guid: b4982b0d5e94551418c5a82ff37181c5, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1691043039}
+    - target: {fileID: 4594030986960672234, guid: b4982b0d5e94551418c5a82ff37181c5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4594030986960672234, guid: b4982b0d5e94551418c5a82ff37181c5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4982b0d5e94551418c5a82ff37181c5, type: 3}
 --- !u!1 &5146679948330904992
@@ -15362,6 +15391,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 701876750}
+    - target: {fileID: 706642772065170902, guid: 18354caf41486ee43b80ac7da568bcd0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 706642772065170903, guid: 18354caf41486ee43b80ac7da568bcd0, type: 3}
       propertyPath: m_Name
       value: Map

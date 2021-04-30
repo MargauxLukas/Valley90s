@@ -50,9 +50,4 @@ public class CabaneManager : MonoBehaviour
     {
         return argent >= 5;
     }
-
-    public void UseBalise()
-    {
-        argent -= 5;
-    }
 }
