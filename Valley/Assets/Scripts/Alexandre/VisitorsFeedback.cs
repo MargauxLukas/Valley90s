@@ -77,7 +77,7 @@ public class VisitorsFeedback : MonoBehaviour
     {
         if (nbLandmarksVisited <= 0) { dialogue = possibleLandmarkDialogue[Random.Range(0, possibleLandmarkDialogue.Count)]; }
         else if (nbLandmarksVisited < 3) { dialogue = lastLandmarkVisited.dialoguePhrase; }
-        else { dialogue = "Woah trop de truc bien dans cette putain de vallée"; }
+        else { dialogue = "Il y a tellement de choses à voir ici !"; }
     }
 
     public void Dialogue()
