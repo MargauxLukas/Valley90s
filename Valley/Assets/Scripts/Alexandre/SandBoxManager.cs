@@ -42,7 +42,7 @@ public class SandBoxManager : MonoBehaviour
     {
         audioSource.transform.position = saveTree.transform.position;
         audioSource.Play();
-        saveTree.SetActive(false);           //Oui c'est con pour le moment 
+        saveTree.transform.parent.gameObject.SetActive(false);           //Oui c'est con pour le moment 
     }
 
     public void SaveTreasure(GameObject treasure)
