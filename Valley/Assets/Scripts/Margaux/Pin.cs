@@ -14,11 +14,11 @@ public class Pin : MonoBehaviour
     private void OnDrawGizmos()
     {
         var ca = Color.green;
-        UnityEditor.Handles.color = ca;
+        //UnityEditor.Handles.color = ca;
         //UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, PinManager.instance.viewRange);
 
         var cb = Color.red;
-        UnityEditor.Handles.color = cb;
+        //UnityEditor.Handles.color = cb;
         //UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, PinManager.instance.blockingRange);
     }
 
