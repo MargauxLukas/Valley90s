@@ -21,12 +21,6 @@ public class VisitorBehavior : MonoBehaviour
 
     public Animator animator;
 
-    private void Start()
-    {
-        speed = Random.Range(speedRange.x, speedRange.y);
-        SearchForBalise();
-    }*/
-
     private void OnEnable()
     {
         speed = Random.Range(speedRange.x, speedRange.y);
@@ -124,6 +118,7 @@ public class VisitorBehavior : MonoBehaviour
                 }
                 else
                 {
+                    gameObject.GetComponent<VisitorsFeedback>().ResetMemory();
                     gameObject.SetActive(false);
                 }
             }
