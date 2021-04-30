@@ -7134,7 +7134,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4594030986960672233, guid: b4982b0d5e94551418c5a82ff37181c5, type: 3}
   m_PrefabInstance: {fileID: 4594030986294484965}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &1163920456
+--- !u!82 &1163920459
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14539,6 +14539,10 @@ PrefabInstance:
       propertyPath: money
       value: 
       objectReference: {fileID: 596673452}
+    - target: {fileID: 404485818678421656, guid: 23128ec5b2bbf9c4eac5a2ace42860dc, type: 3}
+      propertyPath: argent
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 404485818766799178, guid: 23128ec5b2bbf9c4eac5a2ace42860dc, type: 3}
       propertyPath: m_Name
       value: Manager
