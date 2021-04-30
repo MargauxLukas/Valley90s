@@ -76,7 +76,7 @@ public class VisitorSpawner : MonoBehaviour
         }
     }
 
-    private Balise GetObjective()
+    public Balise GetObjective()
     {
         if (knownLocations.Count > 0)
         {

@@ -13,6 +13,9 @@ public class SandBoxManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> balisePrefabs;
 
+    [SerializeField]
+    private AudioSource audioSource;
+
     [ContextMenu("Set balise prefab")]
     void SetBalisePrefabs()
     {
@@ -35,6 +38,8 @@ public class SandBoxManager : MonoBehaviour
 
     public void CutTree()
     {
+        audioSource.transform.position = saveTree.transform.position;
+        audioSource.Play();
         saveTree.SetActive(false);           //Oui c'est con pour le moment 
     }
 
@@ -66,7 +71,6 @@ public class SandBoxManager : MonoBehaviour
     {
         if (saveBalise == null)
         {
-            Debug.Log(CabaneManager.instance.CanPutBalise());
             if (CabaneManager.instance.CanPutBalise())
             {
                 foreach (GameObject g in balisePrefabs)
@@ -77,6 +81,7 @@ public class SandBoxManager : MonoBehaviour
                         g.transform.position = position;
                         CabaneManager.instance.UseBalise();
                         g.GetComponent<Balise>().mapPoint = PinManager.instance.PutBalise(new Vector2(position.x, position.z));
+                        g.GetComponent<Balise>().audioSource.Play();
                         break;
                     }
                 }

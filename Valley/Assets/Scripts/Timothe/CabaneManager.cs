@@ -36,19 +36,17 @@ public class CabaneManager : MonoBehaviour
 
     public void AddArgent(int nbToAdd)
     {
-        Debug.Log("Balise en plus");
-        argent++;
+        argent += nbToAdd;
         floatingText.SetActive(true);
     }
 
     public bool CanPutBalise()
     {
-        return argent > 5;
+        return argent >= 5;
     }
 
     public void UseBalise()
     {
-        Debug.Log("Balise en moins");
         argent -= 5;
     }
 }

@@ -11,7 +11,6 @@ public class VisitorBehavior : MonoBehaviour
     private Balise currentBalise, ancientBalise;
     [SerializeField]
     private Vector2 speedRange = new Vector2(2, 4);
-    [SerializeField]
     private float speed;
     [SerializeField]
     private float viewDistance;
@@ -21,8 +20,11 @@ public class VisitorBehavior : MonoBehaviour
 
     public Animator animator;
 
+    private float currentLivedTime;
+
     private void OnEnable()
     {
+        currentLivedTime = 60;
         speed = Random.Range(speedRange.x, speedRange.y);
         SearchForBalise();
     }
@@ -30,6 +32,11 @@ public class VisitorBehavior : MonoBehaviour
     private void OnDisable()
     {
         StopAllCoroutines();
+    }
+
+    private void Update()
+    {
+        currentLivedTime -= Time.deltaTime;
     }
 
     private void AskToMove(Vector3 newDirection)
@@ -110,11 +117,15 @@ public class VisitorBehavior : MonoBehaviour
 
         if (currentBalise != null)
         {
+            if(currentLivedTime < 0 && locationObjectif != CabaneManager.instance.GetCabaneBalise)
+            {
+                ChangeObjectif(CabaneManager.instance.GetCabaneBalise);
+            }
             if(currentBalise == locationObjectif)
             {
                 if (locationObjectif != CabaneManager.instance.GetCabaneBalise)
                 {
-                    ChangeObjectif(CabaneManager.instance.GetCabaneBalise);
+                    ChangeObjectif(VisitorSpawner.instance.GetObjective());
                 }
                 else
                 {

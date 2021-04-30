@@ -16,6 +16,11 @@ public class PlayerController : MonoBehaviour
 
     private bool canCutTree;
 
+    [SerializeField]
+    private AudioSource audioSource;
+
+    private float timeBeforeStepSound;
+
     void FixedUpdate()
     {
         /**************************
@@ -44,6 +49,7 @@ public class PlayerController : MonoBehaviour
 
         if (moveDirection != Vector3.zero)
         {
+            timeBeforeStepSound -= Time.fixedDeltaTime;
             PlayerManager.instance.PlayWalk();
             MoveCharacter(moveDirection);
         }
@@ -65,6 +71,11 @@ public class PlayerController : MonoBehaviour
 
     private void MoveCharacter(Vector3 direction)
     {
+        if(timeBeforeStepSound < 0)
+        {
+            timeBeforeStepSound = 5 / speed;
+            audioSource.Play();
+        }
         characterController.Move(direction);
         body.forward = direction;
     }

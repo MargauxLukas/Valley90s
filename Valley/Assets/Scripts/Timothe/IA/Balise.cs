@@ -6,6 +6,8 @@ public class Balise : MonoBehaviour
 {
     public GameObject mapPoint;
 
+    public AudioSource audioSource;
+
     private void OnDrawGizmos()
     {
         Color newCol = Color.yellow;
