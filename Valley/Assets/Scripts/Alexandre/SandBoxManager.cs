@@ -16,6 +16,8 @@ public class SandBoxManager : MonoBehaviour
     [SerializeField]
     private AudioSource audioSource;
 
+    public GameObject UIAxe;
+
     [ContextMenu("Set balise prefab")]
     void SetBalisePrefabs()
     {
@@ -52,8 +54,10 @@ public class SandBoxManager : MonoBehaviour
     {
         saveTreasure.SetActive(false);
         UIManager.instance.ShowTreasureObtained(saveTreasure.GetComponent<TreasureInfo>().name);
+        CabaneManager.instance.AddArgent(saveTreasure.GetComponent<TreasureInfo>().money);
         if(saveTreasure.GetComponent<TreasureInfo>().unlockAxe)
         {
+            UIAxe.SetActive(true);
             canCutTree = true;
         }
         else
