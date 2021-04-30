@@ -58,15 +58,15 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) || Input.GetButton("A Button")) 
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown("A Button")) 
         {
             if (UIManager.instance.treeUI.activeSelf && canCutTree) { SandBoxManager.instance.CutTree(); }
             if (UIManager.instance.treasureUI.activeSelf) { SandBoxManager.instance.OpenChest(out canCutTree); }
         }
 
-        if (Input.GetKeyDown(KeyCode.R)) { SandBoxManager.instance.PutBalise(transform.position + body.forward); }
+        if (Input.GetKeyDown(KeyCode.R) || Input.GetButtonDown("X Button")) {SandBoxManager.instance.PutBalise(transform.position + body.forward); }
 
-        if (Input.GetKeyDown(KeyCode.M)) { PinManager.instance.OpenMap(); }
+        if (Input.GetKeyDown(KeyCode.M) ||Input.GetButtonDown("Y Button")) { PinManager.instance.OpenMap(); }
     }
 
     private void MoveCharacter(Vector3 direction)
