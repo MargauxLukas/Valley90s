@@ -1,4 +1,4 @@
-﻿using System;
+﻿//using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,30 +13,48 @@ public class VisitorsFeedback : MonoBehaviour
     private float stayTime = 300f;
 
     public TextMesh dialogueBulle;
+    private List<string> possibleRandomDialogue;
+    private List<string> possibleLandmarkDialogue;
     private string dialogue;
     private int chanceDialogue;                                       //Random
+    private bool isTalking;
 
-    void Start()
+    private float timeBeforeDialogue, currentTimeBeforeDialogue;
+
+    /*void Start()
     {
         StartCoroutine(TimeOnValley());
+    }*/
+
+    private void Update()
+    {
+        currentTimeBeforeDialogue += Time.deltaTime;
+        if (currentTimeBeforeDialogue >= timeBeforeDialogue && !isTalking)
+        {
+            timeBeforeDialogue = UnityEngine.Random.Range(25f, 60f);
+            currentTimeBeforeDialogue = 0;
+
+            dialogue = possibleRandomDialogue[Random.Range(0, possibleRandomDialogue.Count)];
+        }
     }
 
-    IEnumerator TimeOnValley()
+    /*IEnumerator TimeOnValley()
     {
         yield return new WaitForSeconds(stayTime);
         //Reset Memory
         ResetMemory();
-    }
+    }*/
 
     private void OnTriggerEnter(Collider other)
     {
 
         if (other.gameObject.name.Contains("Player") && nbLandmarksVisited > 0)
         {
-            chanceDialogue = UnityEngine.Random.Range(1,11);
+            chanceDialogue = Random.Range(1,11);
             Debug.Log(chanceDialogue);
             if (chanceDialogue > 5)
             {
+                ChooseDialogue();
                 Dialogue();
             }
         }
@@ -55,10 +73,16 @@ public class VisitorsFeedback : MonoBehaviour
     }
 
     #region Dialogue
+    public void ChooseDialogue()
+    {
+        if (nbLandmarksVisited <= 0) { dialogue = possibleLandmarkDialogue[Random.Range(0, possibleLandmarkDialogue.Count)]; }
+        else if (nbLandmarksVisited < 3) { dialogue = lastLandmarkVisited.dialoguePhrase; }
+        else { dialogue = "Woah trop de truc bien dans cette putain de vallée"; }
+    }
+
     public void Dialogue()
     {
-        if (nbLandmarksVisited < 3) { dialogue = lastLandmarkVisited.dialoguePhrase; }
-        else { dialogue = "Woah trop de truc bien dans cette putain de vallée"; }
+        isTalking = true;
 
         dialogueBulle.gameObject.SetActive(true);
         dialogueBulle.text = dialogue;
@@ -71,6 +95,7 @@ public class VisitorsFeedback : MonoBehaviour
     IEnumerator EndDialogue()
     {
         yield return new WaitForSeconds(2f);
+        isTalking = false;
         dialogueBulle.gameObject.SetActive(false);
     }
     #endregion
