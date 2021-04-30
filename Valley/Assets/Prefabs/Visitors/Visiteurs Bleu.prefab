@@ -828,6 +828,21 @@ MonoBehaviour:
   lastLandmarkVisited: {fileID: 0}
   nbLandmarksVisited: 0
   dialogueBulle: {fileID: 3140250668578785605}
+  possibleRandomDialogue:
+  - "J'esp\xE9rais faire ce voyage depuis longtemps !"
+  - Tout est si paisible ici.
+  - "Je pars \xE0 l'aventure !"
+  - Il fait une de ces chaleurs...
+  - Vous pensez que les vaches marrons donnent du chocolat ?
+  possibleLandmarkDialogue:
+  - J'ai entendu parler d'un puits qui exauce les souhaits, j'espere que je le trouverais
+    !
+  - "Les oiseaux semblent \xE9viter le centre de la montagne. Je me demande pourquoi."
+  - "J'ai cru apercevoir un vieux b\xE2timent au bord du lac, j'aimerais aller le
+    voir de plus pr\xE8s."
+  - "Il para\xEEt qu'un arbre centenaire se cache au creux d'une for\xEAt."
+  - "J'ai lu quelque part que la vall\xE9e abritait un village, savez-vous s'il en
+    reste des traces ?"
 --- !u!82 &2660352015897714354
 AudioSource:
   m_ObjectHideFlags: 0
