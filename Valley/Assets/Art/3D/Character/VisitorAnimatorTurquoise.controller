@@ -46,7 +46,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 40a2ae6395a6db34daa629fcf6ba07de, type: 2}
+  m_Motion: {fileID: 7400000, guid: 378e64f268d22d2429ca72a15c1bb5a0, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -58,7 +58,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: VisitorAnimator
+  m_Name: VisitorAnimatorTurquoise
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: isWalking
@@ -126,7 +126,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 390a91a773072d744a0a34d0c3691cdc, type: 2}
+  m_Motion: {fileID: 7400000, guid: 8a6b4debb675481478cfe772f96ebe73, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

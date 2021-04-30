@@ -25,7 +25,7 @@ public class VisitorBehavior : MonoBehaviour
     {
         speed = Random.Range(speedRange.x, speedRange.y);
         SearchForBalise();
-    }*/
+    }
 
     private void OnEnable()
     {
