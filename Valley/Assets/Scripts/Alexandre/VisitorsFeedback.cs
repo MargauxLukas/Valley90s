@@ -13,8 +13,8 @@ public class VisitorsFeedback : MonoBehaviour
     private float stayTime = 300f;
 
     public TextMesh dialogueBulle;
-    private List<string> possibleRandomDialogue;
-    private List<string> possibleLandmarkDialogue;
+    [SerializeField] private List<string> possibleRandomDialogue;
+    [SerializeField] private List<string> possibleLandmarkDialogue;
     private string dialogue;
     private int chanceDialogue;                                       //Random
     private bool isTalking;
