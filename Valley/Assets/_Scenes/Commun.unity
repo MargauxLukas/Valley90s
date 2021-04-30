@@ -3190,6 +3190,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 843293962745040647, guid: c78d42fe712d04f4581f76aff919c067, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 843293964039574300, guid: c78d42fe712d04f4581f76aff919c067, type: 3}
       propertyPath: m_text
       value: X
@@ -3859,6 +3863,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2993499737406149232, guid: cf352ab8822db0141a6111f53bd44c18, type: 3}
   m_PrefabInstance: {fileID: 593923648}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &596673452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2426414329589409955, guid: 4115acf91d3583d458ebfd23d59ec3f9, type: 3}
+  m_PrefabInstance: {fileID: 24952003}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &612932381
 GameObject:
   m_ObjectHideFlags: 0
@@ -14337,6 +14352,10 @@ PrefabInstance:
       propertyPath: floatingText
       value: 
       objectReference: {fileID: 5274399667016737011}
+    - target: {fileID: 404485818678421656, guid: 23128ec5b2bbf9c4eac5a2ace42860dc, type: 3}
+      propertyPath: money
+      value: 
+      objectReference: {fileID: 596673452}
     - target: {fileID: 404485818766799178, guid: 23128ec5b2bbf9c4eac5a2ace42860dc, type: 3}
       propertyPath: m_Name
       value: Manager

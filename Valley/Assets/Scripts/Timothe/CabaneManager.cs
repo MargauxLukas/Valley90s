@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CabaneManager : MonoBehaviour
 {
@@ -19,9 +21,12 @@ public class CabaneManager : MonoBehaviour
 
     float timeLeftBeforeMonney;
 
+    public TextMeshProUGUI money;
+
     private void Awake()
     {
         instance = this;
+        money.text = argent.ToString();
     }
 
     private void Update()
@@ -37,7 +42,8 @@ public class CabaneManager : MonoBehaviour
     public void AddArgent(int nbToAdd)
     {
         argent += nbToAdd;
-        floatingText.SetActive(true);
+        money.text = argent.ToString();
+        //floatingText.SetActive(true);
     }
 
     public bool CanPutBalise()
